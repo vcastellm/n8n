@@ -758,7 +758,7 @@ export class OauthService {
 		tokenEndpointAuthMethods: string[],
 		codeChallengeMethods: string[],
 	): { grantType: OAuth2GrantType; authentication?: OAuth2AuthenticationMethod } {
-		if (grantTypes.includes('authorization_code') && grantTypes.includes('refresh_token')) {
+		if (grantTypes.includes('authorization_code')) {
 			if (codeChallengeMethods.includes('S256')) {
 				return { grantType: 'pkce' };
 			}
